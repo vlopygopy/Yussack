@@ -12,13 +12,22 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+    <script>
+      // Terapkan tema tersimpan sebelum render agar tidak berkedip.
+      try {
+        if (window.localStorage.getItem("yussack-theme") === "light") {
+          document.documentElement.classList.add("light");
+        }
+      } catch (e) {}
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/matter-js@0.20.0/build/matter.min.js" defer></script>
     <script src="app.js" defer></script>
   </head>
   <body>
     <div class="stars" aria-hidden="true"></div>
+    <div class="liquid-aurora" aria-hidden="true"></div>
     <nav class="site-navigation" aria-label="Navigasi utama">
-      <div class="nav-pill" id="nav"></div>
+      <div class="nav-pill glass" id="nav"></div>
     </nav>
     <main id="app" class="page-transition"></main>
     <footer id="footer"></footer>
